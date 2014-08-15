@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>test</title>
+<style>
+button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0 none;}
+.demo button{padding:5px 20px 6px;border:0 none;border-radius:2px;color:#fff;font-size:14px;cursor:pointer;}
+.demo .btn1{background:#ff7a00;}
+.demo .btn1:hover{background:#ff9400;}
+.demo .btn2{background:#0b5aee;}
+.demo .btn2:hover{background:#1d6af7;}
+.demo .btn3{background:#4aae3d;}
+.demo .btn3:hover{background:#54bd47;}
+
+/* 兼容方案 */
+.demo2 .btn,.demo2 .btn span{display:inline-block;height:30px;background:url(bgimg/btn.png) no-repeat;line-height:30px;color:#fff;vertical-align:top;}
+.demo2 .btn{padding-left:5px;}
+.demo2 .btn span{padding-right:5px;}
+.demo2 .btn span span{padding:0 15px;background-repeat:repeat-x;}
+
+.demo2 .btn1{background-position:0 -414px;}
+.demo2 .btn1 span{background-position:right -414px;}
+.demo2 .btn1 span span{background-position:0 -445px;}
+.demo2 .btn1:hover{background-position:0 -476px;}
+.demo2 .btn1:hover span{background-position:right -476px;}
+.demo2 .btn1:hover span span{background-position:0 -507px;}
+
+.demo2 .btn2{background-position:0 -538px;}
+.demo2 .btn2 span{background-position:right -538px;}
+.demo2 .btn2 span span{background-position:0 -569px;}
+.demo2 .btn2:hover{background-position:0 -600px;}
+.demo2 .btn2:hover span{background-position:right -600px;}
+.demo2 .btn2:hover span span{background-position:0 -631px;}
+
+.demo2 .btn3{background-position:0 -662px;}
+.demo2 .btn3 span{background-position:right -662px;}
+.demo2 .btn3 span span{background-position:0 -693px;}
+.demo2 .btn3:hover{background-position:0 -724px;}
+.demo2 .btn3:hover span{background-position:right -724px;}
+.demo2 .btn3:hover span span{background-position:0 -755px;}
+</style>
+</head>
+<body>
+<h1>设计意图：</h1>
+<div class="demo">
+	<button class="btn1">按钮</button>
+    <button class="btn2">按钮</button>
+    <button class="btn3">按钮</button>
+</div>
+<h1>为了全浏览器兼容，前端工程师只好这样：</h1>
+<div class="demo2">
+	<a href="?" class="btn btn1"><span><span>按钮</span></span></a>
+	<a href="?" class="btn btn2"><span><span>按钮</span></span></a>
+	<a href="?" class="btn btn3"><span><span>按钮</span></span></a>
+</div>
+</body>
+</html>
