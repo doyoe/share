@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>以图换字方案</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="" />
+<style>
+html,body{margin:0;padding:0;background-color:#222;}
+h1{color:#fff;}
+.item{display:inline;float:left;width:280px;margin:10px 10px 0;border:3px solid #fff;border-radius:5px;}
+.item h2{margin:0;padding:0 10px;border-bottom:3px solid #fff;color:#fff;font-size:16px;line-height:2;}
+
+/* comm txt */
+.txt{overflow:hidden;width:195px;height:21px;margin:15px 10px;background:url(image/test.jpg) no-repeat;color:#fff;font-size:16px;}
+
+/* case1 display:none */
+.case1 span{display:none;}
+
+/* case2 visibility:hidden */
+.case2 span{visibility:hidden;}
+
+/* case3 text-indent负值，注意inline-block场景 */
+.case3{text-indent:-999px;}
+
+/* case4 text-indent:100% */
+.case4{text-indent:100%;white-space:nowrap;}
+
+/* case5 padding挤压 */
+.case5{height:0;padding-top:21px;}
+
+/* case6 margin挤压 */
+.case6 span{display:block;margin-top:21px;}
+
+/* case7 line-height溢出 */
+.case7{line-height:10;}
+
+/* case8 超小字体 */
+.case8{font-size:0;}
+
+/* case9 伪对象 */
+.case9{position:relative;background:none;}
+.case9:before{position:absolute;top:0;left:0;content:url(image/test.jpg);}
+
+/* case10 空标签 */
+.case10{position:relative;background:none;}
+.case10 .dec{position:absolute;z-index:2;width:100%;height:100%;background:url(image/test.jpg) no-repeat;}
+
+/* case11 z-index负值 */
+.case11 span{position:relative;z-index:-1;}
+</style>
+</head>
+<body>
+<h1>以图换字方案：</h1>
+<div class="item">
+	<h2>display:none</h2>
+	<p class="txt case1">
+		<span>团购最低价，越团越便宜</span>
+	</p>
+</div>
+
+<div class="item">
+	<h2>visibility:hidden</h2>
+	<p class="txt case2">
+		<span>团购最低价，越团越便宜</span>
+	</p>
+</div>
+
+<div class="item">
+	<h2>text-indent负值</h2>
+	<p class="txt case3">团购最低价，越团越便宜</p>
+</div>
+
+<div class="item">
+	<h2>text-indent:100%</h2>
+	<p class="txt case4">团购最低价，越团越便宜</p>
+</div>
+
+<div class="item">
+	<h2>padding挤压</h2>
+	<p class="txt case5">团购最低价，越团越便宜</p>
+</div>
+
+<div class="item">
+	<h2>margin挤压</h2>
+	<p class="txt case6">
+		<span>团购最低价，越团越便宜</span>
+	</p>
+</div>
+
+<div class="item">
+	<h2>line-height溢出</h2>
+	<p class="txt case7">团购最低价，越团越便宜</p>
+</div>
+
+<div class="item">
+	<h2>超小字体</h2>
+	<p class="txt case8">团购最低价，越团越便宜</p>
+</div>
+
+
+<div class="item">
+	<h2>伪对象：</h2>
+	<p class="txt case9">团购最低价，越团越便宜</p>
+</div>
+
+<div class="item">
+	<h2>空标签：</h2>
+	<p class="txt case10">
+		<span class="dec"></span>
+		团购最低价，越团越便宜
+	</p>
+</div>
+
+<div class="item">
+	<h2>z-index负值：</h2>
+	<p class="txt case11">
+		<span>团购最低价，越团越便宜</span>
+	</p>
+</div>
+</body>
+</html>
