@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <title>User Experience Gradually</title>
+  <base target="_blank">
+  <link rel="stylesheet" href="skin/slides.css">
+  <link rel="stylesheet" href="skin/style.css">
+  <link rel="stylesheet" href="skin/demo.css">
+</head>
+<body>
+<h1>渐进式的用户体验</h1>
+<label class="bn-toggle-gesture">
+  <input type="checkbox" class="toggle-gesture">手势
+</label>
+<label class="bn-toggle-fullscreen">
+  <input type="checkbox" class="toggle-fullscreen">全屏
+</label>
+
+<div class="page page-cover">
+  <article>
+    <h2 class="title">User Experience Gradually</h2>
+    <h3 class="sub-title">杜瑶（飘零雾雨）</h3>
+    <div class="author">
+      <a href="http://weibo.com/doyoe"><img src="http://tp3.sinaimg.cn/1634599954/50/5648979924/1" alt="doyoe">@doyoe</a>
+    </div>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>自我介绍</h2>
+    <p>想了想，还是需要简单写点自我介绍神马的，期望能被更多人记住，尤其是妹纸们。</p>
+    <ul class="list-1">
+      <li>我在去哪儿，我在机票；</li>
+      <li>Focus On: CSS, HTML, 无障碍, 可访问性等领域；</li>
+      <li>曾经使用过或正在使用的称呼：飘零雾雨, joy, doyoe<span class="slide-item">, 当然还有最近飙红的天雷轰轰的 『<b class="highlight">瑶姐</b>』</span></li>
+    </ul>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>言归正传</h2>
+    <p>先做个小调查：</p>
+    <ul class="list-1 slide-item">
+      <li>你了解渐进增强和优雅退化吗？</li>
+      <li>你在项目中使用过HTML5吗？</li>
+      <li>你觉得能在去哪儿网项目上用CSS3吗？</li>
+    </ul>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>真正的主题：渐进增强和优雅退化的设计原则</h2>
+    <p>我一直觉得前端工程师是既有程序员严谨，又有设计师感性，同时还具备产品经理大局观的一群人。我们有责任在作出更好产品的同时加速推进新技术的普及进程。</p>
+    <h3 class="slide-item">什么是渐进增强？</h3>
+    <ul class="list-1 slide-item">
+      <li>关注点在内容本身；</li>
+      <li>一开始构建较少的特性，并针对各浏览器追加功能；</li>
+    </ul>
+    <h3 class="slide-item">什么是优雅降级？</h3>
+    <ul class="list-1 slide-item">
+      <li>针对高级浏览器来设计网站；</li>
+      <li>在开发后期针对老式浏览器进行测试，保证其有简陋却不影响使用的体验；</li>
+    </ul>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>这对我们有什么帮助？</h2>
+    <ul class="list-1 slide-item">
+      <li>让我们的用户享受到更好的体验；</li>
+      <li>让前端开发的工作更有趣，而不用每天纠结在兼容性上；</li>
+      <li>促进用户更新浏览器；</li>
+      <li>让新技术得以更快的普及；</li>
+    </ul>
+    <p class="slide-item">渐进增强和优雅退化的原则所要达到的就是这样一个良性的循环
+    ：给高级浏览器优良体验，过时浏览器简陋体验，促使用户提高升级浏览器的概率，当高级浏览器覆盖率更高时，我们将能提供更多的优良体验，而用户也将获得更Cool的浏览效果，整体收益。</p>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>从一点一滴做起</h2>
+    <p>有人可能要问？要推行这种策略，需要产品线整个链条环节上的人都认可才行。我想说，是的，这样将会取得最佳效果。不过就算现实没这样理想，我们也可以从小处开始：</p>
+    <h3 class="slide-item">不起眼的超级连接</h3>
+    <h4 class="slide-item">设计意图：</h4>
+    <div class="demo slide-item">
+      <div class="base-link">
+        <a href="?" class="one">去哪儿网</a>
+        <a href="?" class="two">酒店</a>
+        <a href="?" class="three">机票</a>
+      </div>
+    </div>
+    <h4 class="slide-item">渐进增强：</h4>
+    <div class="demo slide-item">
+      <div class="elegant-link">
+        <a href="?" class="one">去哪儿网</a>
+        <a href="?" class="two">酒店</a>
+        <a href="?" class="three">机票</a>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>也许只是一句代码</h2>
+    <p>一句代码，也许就可以让你的网页变得更加生动，并提供更佳的体验和应用上新技术，你不打算试试？</p>
+    <h3 class="slide-item">于细微处体现亮点</h3>
+    <h4 class="slide-item">设计意图：</h4>
+    <div class="demo demo2 slide-item">
+      <div class="base-link">
+        <a href="?">去哪儿网<span></span></a>
+        <a href="?">酒店<span></span></a>
+        <a href="?">机票<span></span></a>
+      </div>
+    </div>
+    <h4 class="slide-item">渐进增强：</h4>
+    <div class="demo demo2 slide-item">
+      <div class="elegant-link">
+        <a href="?">去哪儿网<span></span></a>
+        <a href="?">酒店<span></span></a>
+        <a href="?">机票<span></span></a>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>我们的HTML没做改动</h2>
+    <p>你可以在原有的HTML Code上做大部分的事，锦上添花的事，不推荐重构原有代码，避免不必要的代价和风险</p>
+    <h3 class="slide-item">下拉菜单可以更细腻</h3>
+    <h4 class="slide-item">设计意图：</h4>
+    <div class="demo demo3 slide-item">
+      <div class="base">
+        <div class="g-combobox">
+          <a href="?" class="target">
+            <strong>下拉菜单</strong>
+            <span>选择其它项<!--[if lte IE 7]><ins>IE7 and earlier, Get to die</ins><![endif]--></span>
+          </a>
+          <div class="list">
+            <ul>
+              <li><a href="?">去哪儿网</a></li>
+              <li><a href="?">机票</a></li>
+              <li><a href="?">酒店</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h4 class="slide-item">渐进增强：</h4>
+    <div class="demo demo3 slide-item">
+      <div class="elegant">
+        <div class="g-combobox g-combobox2">
+          <a href="?" class="target">
+            <strong>下拉菜单</strong>
+            <span>选择其它项<!--[if lte IE 7]><ins>IE7 and earlier, Get to die</ins><![endif]--></span>
+          </a>
+          <div class="list">
+            <ul>
+              <li><a href="?">去哪儿网</a></li>
+              <li><a href="?">机票</a></li>
+              <li><a href="?">酒店</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>更好看的文本输入域</h2>
+    <p>是的，我们不需要做太多的事，就能让文本域的状态更加鲜明</p>
+    <h4 class="slide-item">设计意图：</h4>
+    <div class="demo demo4 slide-item">
+      <div class="base">
+        <div><input type="text" class="entry"></div>
+        <div><textarea class="entry"></textarea></div>
+      </div>
+    </div>
+    <h4 class="slide-item">渐进增强：</h4>
+    <div class="demo demo4 slide-item">
+      <div class="elegant">
+        <div><input type="text" class="entry"></div>
+        <div><textarea class="entry"></textarea></div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>让你图文效果更Cool</h2>
+    <p>很多好东西其实是“玩出来的”</p>
+    <h4 class="slide-item">设计意图：</h4>
+    <div class="demo demo5 slide-item">
+      <div class="base">
+        <div id="container">
+          <div class="wrapper">
+            <div class="item">
+              <img src="images/1.jpeg">
+              <span class="information">
+                <strong>Yotpo</strong> Social reviewing solution,increase your social engagement through social reviews.
+              </span>
+            </div>
+          </div>
+          
+          <div class="wrapper">
+            <div class="item">
+              <img src="images/2.png">
+              <span class="information">
+                <strong>Olark Chat</strong> Chat with your customers. Watch them fill their shopping carts.
+              </span>
+            </div>
+          </div>
+
+          <div class="wrapper">
+            <div class="item">
+              <img src="images/3.png">
+              <span class="information">
+                <strong>Ordoro</strong> Automate your backoffice: aggregate orders, manage inventory, print shipping labels.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h4 class="slide-item">渐进增强：</h4>
+    <div class="demo demo5 slide-item">
+      <div class="elegant">
+        <div id="container">
+          <div class="wrapper">
+            <div class="item">
+              <img src="images/1.jpeg">
+              <span class="information">
+                <strong>Yotpo</strong> Social reviewing solution,increase your social engagement through social reviews.
+              </span>
+            </div>
+          </div>
+          
+          <div class="wrapper">
+            <div class="item">
+              <img src="images/2.png">
+              <span class="information">
+                <strong>Olark Chat</strong> Chat with your customers. Watch them fill their shopping carts.
+              </span>
+            </div>
+          </div>
+
+          <div class="wrapper">
+            <div class="item">
+              <img src="images/3.png">
+              <span class="information">
+                <strong>Ordoro</strong> Automate your backoffice: aggregate orders, manage inventory, print shipping labels.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>你看到了什么？</h2>
+    <p>简单的列举了几个我们完全可以用得上的渐进增强的场景，我猜这种情形你也不陌生？</p>
+    <ol class="list-1 slide-item">
+      <li>有趣？</li>
+      <li>更有成就感？</li>
+      <li>学以致用？</li>
+      <li>让人称赞？</li>
+      <li>用户买单？</li>
+    </ol>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>我想让大家看到的</h2>
+    <p>其实我更想让大家得到的收获是，你能认同以下这几个观点：</p>
+    <ol class="list-1 slide-item">
+      <li>这做起来很简单；</li>
+      <li>发现有意思的东西；</li>
+      <li>收集有趣的效果；</li>
+      <li>学习新技术；</li>
+      <li>做有意义的事；</li>
+      <li>前端不是每天埋头修bug；</li>
+    </ol>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>真正的压力和挑战来自于优雅降级</h2>
+    <h3 class="slide-item">为什么会这样说？</h3>
+    <ol class="list-1 slide-item">
+      <li>优雅降级可能需要基于去哪儿网用户浏览器数据做支撑；</li>
+      <li>需要能让产品认同你的观点；</li>
+      <li>需要设计师更加优秀，能大体知道各浏览器差异；</li>
+    </ol>
+    <h3 class="slide-item">这其实没那么可怕</h3>
+    <ol class="list-1 slide-item">
+      <li>你所拥有的技能和丰富的互联网经验，会让你找到最佳的理由来和每个链条的关键人物达成共识；</li>
+      <li>主动并且经常沟通，最终你会善于沟通；</li>
+      <li>理由需要言之有物，而不是靠声音大；</li>
+    </ol>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>你可能遇见过这样的时刻</h2>
+    <p>炫酷的base设计稿</p>
+    <h4 class="slide-item">设计意图：</h4>
+    <div class="demo demo10 slide-item">
+      <div class="base">
+        <img src="images/demo10-1.png" alt="高级浏览器下输入框聚焦效果图">
+      </div>
+    </div>
+    <h4 class="slide-item">优雅降级：</h4>
+    <div class="demo demo10 slide-item">
+      <div class="bad">
+        <img src="images/demo10-2.png" alt="简陋浏览器下输入框聚焦效果图">
+      </div>
+    </div>
+    <p class="slide-item">这是酒店首页的搜索，个人感觉处理得不错，虽然这可能是一个渐进增强的例子，但没所谓，反过来说也一样。</p>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>一些案例已再不知不觉中开始出现</h2>
+    <p>在一定程度上充分尊重设计师的成果</p>
+    <h4 class="slide-item">设计意图：</h4>
+    <div class="demo demo11 slide-item">
+      <div class="base">
+        <img src="images/demo11-1.png" alt="高级浏览器下头像效果图">
+      </div>
+    </div>
+    <h4 class="slide-item">优雅降级：</h4>
+    <div class="demo demo11 slide-item">
+      <div class="bad">
+        <img src="images/demo11-2.png" alt="简陋浏览器下头像效果图">
+      </div>
+    </div>
+    <p class="slide-item">这攻略频道的一个优雅降级的示例，我们会发现有不少地方正朝着良性的方向在前进，值得叫好。UI和PM，这样的情形，你们不觉得很Cool么</p>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>圆角是否曾经让你蛋疼过？</h2>
+    <p>我相信大部分前端工程师都一度觉得圆角很坑爹，甚至希望整个世界都是扁平方正的。</p>
+    <h4 class="slide-item">设计意图：</h4>
+    <div class="demo demo12 slide-item">
+      <div class="base">
+        <span>美女向导</span>
+        <span>当地通</span>
+        <span>服务体贴</span>
+      </div>
+    </div>
+    <h4 class="slide-item">优雅降级：</h4>
+    <div class="demo demo12 slide-item">
+      <div class="bad">
+        <span>美女向导</span>
+        <span>当地通</span>
+        <span>服务体贴</span>
+      </div>
+    </div>
+    <p class="slide-item">固守着粗鄙浏览器的用户，他可能真心不在意这1，2个像素的圆角。甚至他的关注只是如何才能完成这次交易，功能完整和顺畅性对他来说更为重要。这是当地人的一个case</p>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>不可不提的话题：按钮</h2>
+    <p>多数前端工程师都在按钮上折腾过，随便说2点：鼠标经过效果，圆角</p>
+    <h4 class="slide-item">设计意图：</h4>
+    <div class="demo demo13 slide-item">
+      <div class="base">
+        <button class="btn1">按钮</button>
+        <button class="btn2">按钮</button>
+        <button class="btn3">按钮</button>
+      </div>
+    </div>
+    <h4 class="slide-item">优雅降级：</h4>
+    <div class="demo demo13 slide-item">
+      <div class="bad">
+        <button class="btn1">按钮</button>
+        <button class="btn2">按钮</button>
+        <button class="btn3">按钮</button>
+      </div>
+    </div>
+    <p class="slide-item">为了达成这样的效果，你可能不知道前端工程师都做了些什么事，可以看实际例子：<a href="demo/button.html" target="_blank">button</a></p>
+    <p>
+      <span class="slide-item">恶心的HTML Code</span>
+      <span class="slide-item">，丧失语义的标签</span>
+      <span class="slide-item">，超链当按钮用，难道脸盆可以当盘子使？</span>
+      <span class="slide-item">冗余、不灵活且可维护性差的图片：高度变化，颜色变化？原图修改或增量？哪个项目用到原图了？新增图片？。。。悲剧</span>
+    </p>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>做该做的事</h2>
+    <p>有没有觉得为做滚动或者滑动效果时，进行像素级的移动计算而想吐槽？</p>
+    <h4 class="slide-item">设计意图：</h4>
+    <div class="demo demo14 slide-item">
+      <div class="base">
+        <div class="card">
+          <img src="images/demo14.jpg" alt="">
+          <div class="cover">
+            <p>弯曲透明的水下移动隧道带游客漫步海底，亲眼目睹形色各异、近在咫尺的海洋生物，感受神奇美丽的海底世界。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h4 class="slide-item">优雅降级：</h4>
+    <div class="demo demo14 slide-item">
+      <div class="bad">
+        <div class="card">
+          <img src="images/demo14.jpg" alt="">
+          <div class="cover">
+            <p>弯曲透明的水下移动隧道带游客漫步海底，亲眼目睹形色各异、近在咫尺的海洋生物，感受神奇美丽的海底世界。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="slide-item">前端们，这样你是不是又可以少些不少代码了？补间动画效果对CSS来说只不过是个关键字或者贝塞尔曲线值。妈妈再也不用担心我的动画效果生硬了 :)</p>
+    <p class="slide-item">空出写动画的时间，jser至少可以刷个微博，不是么？</p>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>抛砖引玉</h2>
+    <p>说了这么多，只为可以在工作中让大家有更多可以思考的地方，并酌情考虑这样的做事原则。</p>
+    <p>我们的团队是优秀的，有想法的。</p>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>考虑你的代码中可能存在的问题</h2>
+    <p>你为自己的代码考虑过哪些情况？慢网络？不同人群？不同终端？</p>
+    <ul class="list-1 slide-item">
+      <li>logo；</li>
+      <li>导航；</li>
+      <li>按钮；</li>
+      <li>资质证书；</li>
+      <li>非文本内容替代文本；</li>
+    </ul>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>前景图替代文本</h2>
+    <p>对于传达内容的前景图片，需要具备可感知性，即任何情况下都需要让用户知道图片所表达的意图</p>
+    <div class="slide-item">
+      <a href="?">
+      <img src="images/demo15.jpg" alt="入住新加坡最富丽堂皇的豪华酒店！点击查看详情" title="新加坡金沙空中花园豪华酒店">
+      </a>
+    </div>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>背景图替代文本</h2>
+    <p>对于传达内容的背景图片，须有文本替代方案，必要的时候还需要相应的背景色替代。</p>
+    <div class="demo demo16">
+      <a href="?" title="回到顶部"><span>TOP▲</span></a>
+    </div>
+    <p>想想: text-indent超大负值？margin/padding挤压？超小文本？透明文字？</p>
+    <p>更Cool的方法？</p>
+  </article>
+</div>
+
+<div class="page page-center">
+  <article>
+    <blockquote>
+      <p>让我们一起，</p>
+      <p>构造一个美好的互联网世界</p>
+    </blockquote> 
+  </article>
+</div>
+
+<div class="page page-center page-end">
+  <article>
+    <p>谢 谢!<br>Thanks For Listening</p>
+  </article>
+</div>
+
+<div class="page page-center page-end">
+  <article>
+    <p>Q & A</p>
+  </article>
+</div>
+
+<div class="no-support">
+  Sorry! 暂不支持你的浏览器，请用Chrome打开...
+</div>
+<script src="skin/zepto.js"></script>
+<script src="skin/webcamswiper.js"></script>
+<script src="skin/slides.js"></script>
+</body>
+</html>
