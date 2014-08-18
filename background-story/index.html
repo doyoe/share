@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <title>Background Story</title>
+  <base target="_blank">
+  <link rel="stylesheet" href="skin/slides.css">
+  <link rel="stylesheet" href="skin/style.css">
+  <link rel="stylesheet" href="skin/demo.css">
+</head>
+<body>
+<h1>背景图像的技术细节</h1>
+<label class="bn-toggle-gesture">
+  <input type="checkbox" class="toggle-gesture">手势
+</label>
+<label class="bn-toggle-fullscreen">
+  <input type="checkbox" class="toggle-fullscreen">全屏
+</label>
+
+<div class="page page-cover">
+  <article>
+    <h2 class="title">Background Story</h2>
+    <h3 class="sub-title">杜瑶（飘零雾雨）</h3>
+    <div class="author">
+      <a href="http://weibo.com/doyoe"><img src="http://tp3.sinaimg.cn/1634599954/50/5648979924/1" alt="doyoe">@doyoe</a>
+    </div>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>背景图与无障碍</h2>
+    <p>对，大家没看错。在开始今天的话题前，让我们先简单看看什么是无障碍，因为我们今天的话题都是基于打造无障碍的易访问站点而提出的。</p>
+    <p>小小的背景图与无障碍、易访问也有千丝万缕的密切关系</p>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>关注信息无障碍</h2>
+      <ul class="list-1 slide-item">
+      <li>Web无障碍的四大基本原则：可感知性，可操作性，易于理解和稳定性</li>
+      <li>信息无障碍可以使残疾人士更方便地使用Web内容，同时也适合老年人上网，还可让普通用户更好的使用。</li>
+      <li>无障碍涉及广泛的残疾症状，包括视觉，听觉，身体，语言，认知，语言，学习以及神经残疾。即盲人和低视患者、聋人和重听人、学习障碍、认知障碍、行动不便、，言语残疾、光过敏患者和这些病症的复合患者。</li>
+    </ul>
+    <p class="remark slide-item"><a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/" target="_blank" class="external" rel="external">Web Content Accessibility Guidelines (WCAG) 2.0</a>给了我们很多建议，遵循这些原则可以让用户更容易访问您的网站</p>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>为什么有这个话题？</h2>
+    <p>我记得在所谓的web标准话题兴起之前，大家都钟爱用table布局，因为在那个时候CSS并没有那么流行。所有的图片，不论是装饰性的图片还是内容性的图片，几乎无一例外，都是直接使用前景图。前景图也是web内容的组成部分，这就有问题了，不是么？</p>
+    <p>而如今，大家用背景图的方式开始有了当年用前景图的味道。</p>
+    <p>前端几乎把背景图用烂了，别否认，可能你也正在这么做。</p>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>现在大家在什么时候会用背景图？</h2>
+    <ul class="list-1 slide-item">
+      <li>装饰性时（这个无争议，因为装饰性的图片并不是我们能读出来或者机器能够识别的，同时我们更不希望，这些图片会出现在DOM树中，你懂的）</li>
+      <li>可读信息时（以图换字，这个比较多争议，且经历过多个阶段），是我们今天主要讲解的话题：可感知性</li>
+    </ul>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>可感知性</h2>
+    <p>可感知性明确了信息和用户界面组件必须以可感知的方式呈现给用户。其中包括：</p>
+    <ul class="list-1 slide-item">
+      <li>替代文本：为任何非文本内容提供替代文本，使其可以转化为人们需要的其他形式，如大字体印刷，盲文，语音，符号或简单的语言。</li>
+      <li>基于时间的媒体：为基于时间的媒体提供替代。</li>
+      <li>适应性：可创建用不同方式呈现的内容（例如简单的布局），而不会丢失信息或结构。例如：颜色并不是作为传达信息、表明动作、引起反应或区分视觉元素的唯一视觉手段（高亮->语义化）</li>
+      <li>可辨别性：可使用户更容易看到和听到内容，包括把背景和前景分开。前景和背景需要有较大的对比度</li>
+    </ul>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>糟糕的写法</h2>
+    <p class="showimg"><img src="image/1.png" alt="糟糕的写法示例图"></p>
+    <p>只有背景图，没有文字。当图片或者样式无法加载，使用盲人阅读器或者纯文本阅读器，我们将无法完成查询操作</p>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>这个稍好点</h2>
+    <p class="showimg"><img src="image/2.png" alt="糟糕的写法示例图"></p>
+    <p>样式挂了，或者盲人阅读器，纯文本阅读器，都能正常访问；不过这时图片挂了的话，就毁了，一片空白，啥也没有</p>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>这个和上面一样</h2>
+    <p class="showimg"><img src="image/3.png" alt="糟糕的写法示例图"></p>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>为什么背景图会这样大面积使用？</h2>
+    <ul class="list-1 slide-item">
+      <li>web标准化</li>
+      <li>减少http请求</li>
+      <li>减少DOM节点</li>
+      <li>搜索引擎优化</li>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>web标准化驱动</h2>
+    <p>web标准化其实是一个范围很广的概念，至于为什么它会驱动背景图大范围使用，原因是：</p>
+    <ul class="list-1 slide-item">
+      <li>尽量不使用无意义的表现作为内容呈现；</li>
+      <li>使用前景图会被人认为不专业（对web标准的误解）；</li>
+    </ul>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>减少http请求驱动</h2>
+    <ul class="list-1 slide-item">
+      <li>在前端的眼中，图片请求数的多少，很多时候足以依此评判一个前端能力。</li>
+      <li>尤其是Yahoo Yslow出来之后，减少http请求成为了检测网页性能标准之一。</li>
+      <li>于是，背景图更是开始大规模使用了，并有了专业术语：CSS Sprites。</li>
+    </ul>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>减少页面DOM节点</h2>
+    <ul class="list-1 slide-item">
+      <li>有助于提升加载和渲染速度</li>
+      <li>有助于降低带宽消耗</li>
+      <li>有助于代码简洁和可读</li>
+    </ul>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>本话题的无障碍访问性</h2>
+    <p>我们应该至少保证在以下情况，我们的网页仍然是可被友好访问的：</p>
+    <ul class="list-1 slide-item">
+      <li>使用环境
+        <ul>
+          <li>网络不好：图片无法加载、样式无法加载、或者加载慢</li>
+          <li>节流模式：用户为了节省流量，关闭图片下载</li>
+        </ul>
+      </li>
+      <li>终端环境
+        <ul>
+          <li>盲人读屏器</li>
+          <li>纯文本阅读器</li>
+        </ul>
+      </li>
+    </ul>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>一些误区</h2>
+    <ul class="list-1 slide-item">
+      <li>有人说，那我加个title属性吧，因为屏幕阅读器会直接忽略它</li>
+      <li>有人说，title不行，那我就加alt，嗯嗯，屏幕阅读确实会如实的读出alt内容，并且当图片无法显示时，部分浏览器会将alt内容显示在屏幕上，但Chrome, Safari, Opera都会不</li>
+    </ul>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>模拟一个慢网络或者图片无法载入的情景</h2>
+    <p class="showimg"><img src="image/4.png" alt="糟糕的写法示例图"></p>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>模拟一个样式无法加载的情景</h2>
+    <p class="showimg"><img src="image/5.png" alt="糟糕的写法示例图"></p>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>大家都身处其中</h2>
+    <ul class="list-1 slide-item">
+      <li>可以看到，这些问题都是从我们的主站上随手找到的</li>
+      <li>以上列举的几个常见问题，大家是否中枪？</li>
+      <li>如果中枪，不怕，我们改进；如果没中枪，希望有更好的经验可以分享给大家</li>
+    </ul>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>何时使用前景图，何时使用背景图</h2>
+    <ul class="list-1 slide-item">
+      <li>如果是想让人看到、听到、读到，更快看到那么应该使用前景图，例如：logo</li>
+      <li>如果只是想让人看到的，那么使用背景图</li>
+    </ul>
+    <p>如果需要被感知的地方使用了背景图，需要保证：</p>
+    <ul>
+      <li>图片挂了，能够知道是什么内容</li>
+      <li>样式挂了，能够知道是什么内容</li>
+      <li>盲人阅读器能正常读到内容</li>
+      <li>纯文本阅读器能够正常读到内容</li>
+      <li>搜索引擎优化</li>
+    </ul>
+    <p>这或许会有不少方案，伪对象也是一个思路，只是IE6,7,Balabala...<a href="test.html">DEMO</a></p>
+    <p>更多方案<a href="test2.html">DEMO</a></p>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>LOGO怎么做？</h2>
+    <p>很明显，LOGO是网站元素里极为重要的一环，是希望用户既可以看到，又可以听到，还能够读到的内容，所以，这里使用前景图更为合适。</p>
+    <h3>问题：</h3>
+    <ul>
+      <li>HTTP请求增多？不能使用CSS Sprites？</li>
+      <li>SEO弱化？</li>
+    </ul>
+    <p>这都不是问题：<a href="logo.html">DEMO</a></p>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+    <h2>无障碍可访问性的路程</h2>
+    <ul>
+      <li>无障碍可访问性的路非常远，可能现在我们做得不多，但要有做得更多的心</li>
+      <li>我们要考虑网络环境，要考虑使用者，要考虑使用终端</li>
+      <li>做良心前端</li>
+    </ul>
+  </article>
+</div>
+
+<div class="page page-center page-end">
+  <article>
+    <p>谢 谢!<br>Thanks For Listening</p>
+  </article>
+</div>
+
+<div class="page page-center page-end">
+  <article>
+    <p>Q & A</p>
+  </article>
+</div>
+
+<div class="no-support">
+  Sorry! 暂不支持你的浏览器，请用Chrome打开...
+</div>
+<script src="skin/zepto.js"></script>
+<script src="skin/webcamswiper.js"></script>
+<script src="skin/slides.js"></script>
+</body>
+</html>
