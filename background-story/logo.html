@@ -2,20 +2,31 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>logo</title>
-<meta name="description" content="" />
-<meta name="keywords" content="" />
-<meta name="author" content="" />
+<title>更佳的logo实现方式</title>
+<meta name="description" content="无障碍logo实现示例" />
+<meta name="keywords" content="图文替换, logo实现" />
+<meta name="author" content="Joy Du(飘零雾雨), dooyoe@gmail.com, www.doyoe.com" />
+<meta name="robots" content="all" />
 <style>
-.logo{display:block;position:relative;overflow:hidden;width:136px;height:54px;font-size:20px;}
-.logo img{position:absolute;z-index:2;top:-20px;border:0 none;font-size:0;}
-.logo span{position:absolute;top:10px;left:10px;}
+html,body{background:#aaa;}
+.logo{position:relative;overflow:hidden;width:136px;height:54px;margin:0;font-size:30px;line-height:54px;text-align:center;}
+.logo img{position:absolute;top:-20px;left:0;border:0 none;font-size:0;}
 </style>
 </head>
 <body>
-<a href="?" class="logo">
-	<img alt="前往去哪儿网首页" src="image/logo.png" />
-	<span>去哪儿网</span>
-</a>
+<h1 href="?" class="logo">
+	去哪儿网
+	<img alt="logo" src="image/logo.png" />
+</h1>
+
+<h2>该实现方式具备的特点：</h2>
+<ul>
+	<li>当图片地址失效、慢网络导致图片下载缓慢或者用户开启无图模式（节流模式）时，可以看到用文本替代的logo；</li>
+	<li>当样式地址失效、慢网络导致样式下载缓慢或者用户禁用样式时，能同时看到图片和文本；</li>
+	<li>盲人读屏器能读到文本+image alt；</li>
+	<li>纯文本阅读器能读到文本logo；</li>
+	<li>搜索引擎爬虫能够抓到包含图片和文本的logo描述；</li>
+	<li>logo做成前景图载入比背景图更快。</li>
+</ul>
 </body>
 </html>
